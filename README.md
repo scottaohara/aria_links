@@ -6,7 +6,7 @@ Well, fortunately for you this script exists to help you create accessible fake 
 
 ## Usage
 
-Since ARIA links require JavaScript to work, this script allows for two base mark-up patterns to construct the fake links, that will gracefully degrade if JavaScript is unavailable.
+Since ARIA links require JavaScript to work, this script allows for two base mark-up patterns to construct the fake links. Each will gracefully degrade if JavaScript is unavailable.
 
 __Option 1:__  
 Use this mark-up if you are a-ok with your link just being text if JavaScript is unavailable.  
