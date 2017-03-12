@@ -1,8 +1,10 @@
-# A11y Links
+# ARIA Links
 
-If you need a link, you should really just use the ```<a>``` element, but maybe there's some super corner-case example that I can't think of where you couldn't possibly use the appropriate ```<a>``` element?
+If you need a link, you should really just use the ```<a>``` element. But maybe there's some super corner-case example, that I can't think of, where you couldn't possibly use the appropriate ```<a>``` element?
 
-Well, fortunately for you this script exists to help you create accessible fake links.
+Well, fortunately for that ridiculous corner-case example, this script exists to create accessible fake links.
+
+[See the ARIA Links demo](https://scottaohara.github.io/aria-links/)  
 
 ## Usage
 
