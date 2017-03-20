@@ -54,8 +54,11 @@ Add a ```data-blank``` attribute to the same element as the ```data-action="aria
 But again, you should really just use a normal ```<a>``` element. Browsers will handle all the expected functionality, and more, if you just use the correct element :)
 
 
-## License & Stuff
+### License & Such
 
-This script was written by [Scott O'Hara](https://github.com/scottaohara).
+This script was written by [Scott O'Hara](https://twitter.com/scottohara).
 
 It has an [MIT](https://github.com/scottaohara/accessible-components/blob/master/LICENSE.md) license.
+
+Do with it what you will :)
+
