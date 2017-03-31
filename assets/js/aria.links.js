@@ -1,12 +1,16 @@
-;(function ( w, doc ) {
+;(function ( w, doc, undefined ) {
   //enable strict mode
   'use strict';
-  // Local object for method references
-  // and define meta-data of for this script
+  /**
+   * Local object for method references
+   * and define script meta-data
+   */
   var ARIAlinks = {};
+  w.ARIAlinks   = ARIAlinks;
+
   ARIAlinks.NS      = 'ARIAlinks';
   ARIAlinks.AUTHOR  = 'Scott O\'Hara';
-  ARIAlinks.VERION  = '0.1.1';
+  ARIAlinks.VERION  = '0.1.2';
   ARIAlinks.LICENSE = 'https://github.com/scottaohara/select-to-datalist/blob/master/LICENSE';
 
 
@@ -28,6 +32,8 @@
       self.setAttribute('role', 'link');
       self.classList.add('link');
 
+      // get the child data-link to identify where this 'link' 
+      // should be sending people to.
       if ( self.querySelector('[data-link]') ) {
         url = self.querySelector('[data-link]').textContent;
         self.setAttribute('data-href', url);
@@ -77,14 +83,16 @@
 
 
   /**
-   * Initialize Buttons Functions
+   * Initialize Links Functions
+   * if expanding this script, place any other
+   * initialize functions within here.
    */
   ARIAlinks.init = function () {
     ARIAlinks.create();
   }; // ARIAlinks.init()
 
 
-
+  // go go JavaScript
   ARIAlinks.init();
 
-})( this, this.document );
+})( window, document );
