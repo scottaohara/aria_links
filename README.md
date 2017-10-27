@@ -1,13 +1,12 @@
-# ARIA Links
+# ARIA Links  
 
-If you need a link, you should really just use the ```<a>``` element. But maybe there's some super corner-case example, that I can't think of, where you couldn't possibly use the appropriate ```<a>``` element?
+If you need a link, you should really just use the ```<a>``` element. But maybe there's some super corner-case example, that I can't think of, where you couldn't possibly use the appropriate ```<a>``` element?  
 
-Well, fortunately for that ridiculous corner-case example, this script exists to create accessible fake links.
+Well, fortunately for that ridiculous corner-case example, this script exists to create accessible fake links.  
 
 [See the ARIA Links demo](https://scottaohara.github.io/aria-links/)  
 
-## Usage
-
+## Usage  
 Since ARIA links require JavaScript to work, this script allows for two base mark-up patterns to construct the fake links. Each will gracefully degrade if JavaScript is unavailable.
 
 __Option 1:__  
@@ -32,7 +31,7 @@ Use this mark-up if you would like to display the link's URL if JavaScript is un
 </span>
 ```
 
-If JavaScript is unavailable, the follow CSS selector will add a '-' after the link title, but before the URL.
+If JavaScript is unavailable, the follow CSS selector will add a '-' after the link title, but before the URL.  
 
 ```css
 [data-link]:before {
@@ -41,7 +40,7 @@ If JavaScript is unavailable, the follow CSS selector will add a '-' after the l
 ```
 
 __Optional Option - opening in a new window__  
-Add a ```data-blank``` attribute to the same element as the ```data-action="aria-link"```, to make the link open in a new window.  
+Add a `data-blank` attribute to the same element as the `data-action="aria-link"`, to make the link open in a new window.  
 
 ```html
 <span data-action="aria-link" 
@@ -51,14 +50,13 @@ Add a ```data-blank``` attribute to the same element as the ```data-action="aria
 </span>
 ```
 
-But again, you should really just use a normal ```<a>``` element. Browsers will handle all the expected functionality, and more, if you just use the correct element :)
+But again, you should really just use a normal `<a>` element. Browsers will handle all the expected functionality, and more, if you just use the correct element :)  
 
 
-### License & Such
+## License & Such  
+This script was written by [Scott O'Hara](https://twitter.com/scottohara).  
 
-This script was written by [Scott O'Hara](https://twitter.com/scottohara).
+It has an [MIT](https://github.com/scottaohara/accessible-components/blob/master/LICENSE.md) license.  
 
-It has an [MIT](https://github.com/scottaohara/accessible-components/blob/master/LICENSE.md) license.
-
-Do with it what you will :)
+Do with it what you will :)  
 
