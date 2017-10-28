@@ -1,0 +1,15 @@
+[role="link"] {
+	color: blue;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+[role="link"]:hover,
+[role="link"]:focus {
+	background: yellow;
+	text-decoration: none;
+}
+
+[data-link]:before {
+	content: "-";
+}
