@@ -2,9 +2,9 @@
 
 If you need a link, you should really just use the ```<a>``` element. But maybe there's some super corner-case example, that I can't think of, where you couldn't possibly use the appropriate ```<a>``` element?  
 
-Well, fortunately for that ridiculous example, this script exists to create accessible fake links.  
+Well, fortunately for that ridiculous example, this script exists to create accessible fake links using the [ARIA `role="link"`](https://www.w3.org/TR/wai-aria-1.1/#link).   
 
-[See the ARIA Links demo](https://scottaohara.github.io/aria-links/)  
+See the script in action: [ARIA Links demo](https://scottaohara.github.io/aria-links/)  
 
 ## Usage  
 Since non-native links require JavaScript to work, this script allows for two base mark-up patterns to construct the ARIA links. Each will gracefully degrade to static text if JavaScript is unavailable.
