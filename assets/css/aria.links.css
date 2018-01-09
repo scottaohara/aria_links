@@ -7,6 +7,9 @@
 [role="link"]:hover,
 [role="link"]:focus {
 	background: yellow;
+	box-shadow: 0 0 0 3px yellow;
+	outline: 2px solid blue;
+	outline-offset: 3px;
 	text-decoration: none;
 }
 
