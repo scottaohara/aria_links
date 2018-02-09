@@ -1,16 +1,16 @@
 # ARIA Links  
+If you need a link, you should really just use the ```<a>``` element. But maybe there's some super corner-case situation, that I can't presently think of a justification for, where you can't use the appropriate ```<a>``` element?  
 
-If you need a link, you should really just use the ```<a>``` element. But maybe there's some super corner-case example, that I can't think of, where you couldn't possibly use the appropriate ```<a>``` element?  
-
-Well, fortunately for that ridiculous example, this script exists to create accessible fake links using the [ARIA `role="link"`](https://www.w3.org/TR/wai-aria-1.1/#link).   
+Fortunately for that situation, this script exists to create accessible fake links using the [ARIA `role="link"`](https://www.w3.org/TR/wai-aria-1.1/#link).   
 
 See the script in action: [ARIA Links demo](https://scottaohara.github.io/aria-links/)  
 
-## Usage  
-Since non-native links require JavaScript to work, this script allows for two base mark-up patterns to construct the ARIA links. Each will gracefully degrade to static text if JavaScript is unavailable.
 
-__Option 1:__  
-Use this mark-up if you are a-OK with your link just being text if JavaScript is unavailable.  
+## Usage  
+Since custom links require JavaScript to work, this script allows for two base mark-up patterns to be progressively enhanced into ARIA links. Each pattern will gracefully degrade to static text if JavaScript is unavailable.
+
+### Option 1
+Use the following mark-up if you want to provide static text, if JavaScript is unavailable:  
 
 ```html
 <span data-action="aria-link" 
@@ -19,8 +19,8 @@ Use this mark-up if you are a-OK with your link just being text if JavaScript is
 </span>
 ```
 
-__Option 2:__  
-Use this mark-up if you would like to display the link's URL if JavaScript is unavailable.  
+### Option 2 
+Use the following mark-up if the static text should display a static URL, if JavaScript is unavailable:  
 
 ```html
 <span data-action="aria-link">
@@ -31,7 +31,7 @@ Use this mark-up if you would like to display the link's URL if JavaScript is un
 </span>
 ```
 
-If JavaScript is unavailable, the following CSS selector will add a '-' after the link title, but before the URL.  
+If JavaScript is disabled, the following CSS selector will add a "-" between what would have been the link text, and the static URL.  
 
 ```css
 [data-link]:before {
@@ -39,8 +39,8 @@ If JavaScript is unavailable, the following CSS selector will add a '-' after th
 }
 ```
 
-__Optional Option - opening in a new window__  
-Add a `data-blank` attribute to the same element as the `data-action="aria-link"`, to make the link open in a new window.  
+### Optional Option - opening in a new window
+Including a `data-blank` attribute on the same element as the `data-action="aria-link"`, will allow the custom link to open in a new window.  
 
 ```html
 <span data-action="aria-link" 
@@ -50,11 +50,11 @@ Add a `data-blank` attribute to the same element as the `data-action="aria-link"
 </span>
 ```
 
-### This is a really bad idea
 
-If you need to create links, you should really just use a normal `<a>` element. Browsers will handle all the functionality of this script by default, if the appropriate `<a>` element is used. 
+## This is a really bad idea
+If you need to create links, you should really just use the native `<a>` element. By default browsers already handle all the functionality of this script, and *more*, if the appropriate `<a>` element is used. 
 
-Additionally, native links have context menus built in, where users can decide themselves to open links in new windows, tabs, copy the link location, save to disk, and many other actions. Do you really want to remake these menus and actions with JavaScript?
+For instance, native links have unique context menus (right click on a link to see), where users can choose to open links in new windows, tabs, copy the link location, save to disk, and many other actions. Do you really want to remake these menus and actions for each of your false links with more custom components and JavaScript? 
 
 The correct answer is, "no".  You don't.  Just use a real `<a>` instead. :)
 
