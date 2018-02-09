@@ -10,8 +10,8 @@
 
 	ARIAlinks.NS      = 'ARIAlinks';
 	ARIAlinks.AUTHOR  = 'Scott O\'Hara';
-	ARIAlinks.VERION  = '1.0.0';
-	ARIAlinks.LICENSE = 'https://github.com/scottaohara/accessible-components/blob/master/LICENSE.md';
+	ARIAlinks.VERION  = '1.0.1';
+	ARIAlinks.LICENSE = 'https://github.com/scottaohara/aria-links/blob/master/LICENSE';
 
 
 	/**
