@@ -1,13 +1,13 @@
 # ARIA Links  
-If you need a link, you should really just use the ```<a>``` element. But maybe there's some super corner-case situation, that I can't presently think of a justification for, where you can't use the appropriate ```<a>``` element?  
+If you need a link, you should really just use the `<a>` element with a valid `href`. But maybe there's some super corner-case situation, that I can't presently think of, where you can't use an `<a href="...">`?  
 
-Fortunately for that situation, this script exists to create accessible fake links using the [ARIA `role="link"`](https://www.w3.org/TR/wai-aria-1.1/#link).   
+Fortunately, this script exists to help create accessible fake links using the [ARIA `role="link"`](https://www.w3.org/TR/wai-aria-1.1/#link).   
 
 See the script in action: [ARIA Links demo](https://scottaohara.github.io/aria-links/)  
 
 
 ## Usage  
-Since custom links require JavaScript to work, this script allows for two base mark-up patterns to be progressively enhanced into ARIA links. Each pattern will gracefully degrade to static text if JavaScript is unavailable.
+Since custom ARIA links require JavaScript to work, this script allows for two base mark-up patterns to be progressively enhanced into functioning links. Each pattern will gracefully degrade to static text if JavaScript is unavailable.
 
 ### Option 1
 Use the following mark-up if you want to provide static text, if JavaScript is unavailable:  
@@ -52,11 +52,13 @@ Including a `data-blank` attribute on the same element as the `data-action="aria
 
 
 ## This is a really bad idea
-If you need to create links, you should really just use the native `<a>` element. By default browsers already handle all the functionality of this script, and *more*, if the appropriate `<a>` element is used. 
+Again, if you need to create links you should really just use the `<a>` element. By default browsers already handle all the functionality this script provides, and *more*. 
 
-For instance, native links have unique context menus (right click on a link to see), where users can choose to open links in new windows, tabs, copy the link location, save to disk, and many other actions. Do you really want to remake these menus and actions for each of your false links with more custom components and JavaScript? 
+For instance, native links have unique context menus (right click on a link to invoke), where users can choose to open links in new windows or tab, copy the link location, save to disk, and many other actions. 
 
-The correct answer is, "no".  You don't.  Just use a real `<a>` instead. :)
+Do you really want to remake these menus and actions for each of your faux links with more custom components and JavaScript? 
+
+The correct answer is "no".  You don't. :)
 
 
 ## License & Such  
