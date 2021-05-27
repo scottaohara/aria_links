@@ -3,7 +3,7 @@ If you need a link, you should really just use the `<a>` element with a valid `h
 
 Fortunately, this script exists to help create accessible fake links using the [ARIA `role="link"`](https://www.w3.org/TR/wai-aria-1.1/#link).   
 
-See the script in action: [ARIA Links demo](https://scottaohara.github.io/aria-links/)  
+See the script in action: [ARIA Links demo](https://scottaohara.github.io/aria_links/)  
 
 
 ## Usage  
