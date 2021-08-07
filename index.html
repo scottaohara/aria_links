@@ -1,9 +1,12 @@
 <!DOCTYPE HTML>
-<html lang="en-us" class="no-js">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>ARIA Link</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+      Faux ARIA "Links"
+    </title>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script>
       // remove no-js and add 'js' to the HTML
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -20,16 +23,18 @@
   </head>
 
   <body id="body">
+
     <div id="page" class="content-area mxw-600">
       <h1>
         ARIA Link
       </h1>
+      <p>Making fake ARIA links is generally not a good idea.  But, if you're going to do it anyway, then this here script is one way you could make them.</p>
 
       <h2>
         Mark-up Option 1:
       </h2>
       <p>
-        Use this mark-up if you are a-ok with your link just being text if JavaScript is unavailable.
+        This approach will fallback to static text if JavaScript is unavailable. For instance, if viewed in a browser's reader mode.
       </p>
       <span data-aria-link data-href="https://www.google.com">
         Google
@@ -44,19 +49,19 @@
         Mark-up Option 2:
       </h2>
       <p>
-        Use this mark-up if you would like to display the link's URL if JavaScript is unavailable.
+        Use this mark-up to display a URL if JavaScript is unavailable.
       </p>
       <span data-aria-link>
-        Yahoo
+        Bing
         <span data-link>
-          https://www.yahoo.com
+          https://www.bing.com
         </span>
       </span>
 
 <pre><code>&lt;span data-aria-link>
-  Yahoo
+  Bing
   &lt;span data-link>
-    https://www.yahoo.com
+    https://www.bing.com
   &lt;/span>
 &lt;/span></code></pre>
 
@@ -64,7 +69,7 @@
         Open in a new window:
       </h3>
       <p>
-        Add a <b>data-blank</b> attribute to make the link open in a new window.
+        The <b>data-blank</b> attribute will make the faux link open in a new window. It will add a <code>title</code> attribute with help text "opens in a new window".
       </p>
       <span data-aria-link data-href="https://duckduckgo.com" data-blank>
         Duck Duck Go
@@ -78,6 +83,16 @@
 
     </div>
 
-    <script src="assets/js/aria.links.js"></script>
+    <script src="index.js"></script>
+    <script>
+      const flinks = '[data-aria-link]';
+      const els = document.querySelectorAll(flinks);
+
+      // Generate all tab instances
+      for ( var i = 0; i < els.length; i++ ) {
+        var dis = new fauxLink( els[i] );
+      }
+    </script>
+
   </body>
 </html>
