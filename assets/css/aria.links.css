@@ -1,11 +1,17 @@
-[role="link"] {
+.faux-link {
 	color: blue;
 	cursor: pointer;
 	text-decoration: underline;
 }
 
-[role="link"]:hover,
-[role="link"]:focus {
+@media (prefers-contrast: forced) {
+	.faux-link {
+		color:  LinkText;
+	}
+}
+
+.faux-link:hover,
+.faux-link:focus {
 	background: yellow;
 	box-shadow: 0 0 0 3px yellow;
 	outline: 2px solid blue;
