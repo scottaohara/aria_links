@@ -19,6 +19,6 @@
 	text-decoration: none;
 }
 
-[data-link]:before {
+[data-link]::before {
 	content: "-";
 }
