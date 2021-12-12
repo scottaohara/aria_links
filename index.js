@@ -1,11 +1,11 @@
 (function ( w, doc, undefined ) {
   /**
    * Faux Links
-   * A script to make likely unnecessary ARIA links.
+   * A script to make generally unnecessary ARIA links.
    * Use real <a href> elements instead!
    *
    * Author: Scott O'Hara
-   * Version: 2.0.0
+   * Version: 2.0.1
    * License: https://github.com/scottaohara/aria_links/blob/main/LICENSE
    */
   const fauxLinkOptions = {
@@ -22,20 +22,22 @@
 
 
     /**
-     * Initialize the fake link instance. 
+     * Initialize the fake link instance
      */
     const init = function () {
+      let storeEl;
       el.setAttribute('role', 'link');
       el.classList.add(_options.elClass);
-      if ( !el.hasAttribute('tabindex') ) { 
-        el.tabIndex = 0; 
+      
+      if ( !el.hasAttribute('tabindex') ) {
+        el.tabIndex = 0;
       }
 
       if ( el.hasAttribute('data-href') ) {
         url = el.getAttribute('data-href');
       }
       else {
-        const storeEl = el.querySelector('[data-link]');
+        storeEl = el.querySelector('[data-link]');
         url = storeEl.textContent;
         storeEl.remove();
       }
@@ -63,23 +65,22 @@
       }
     }
 
+    
     /**
      * Real links are activated via the ENTER key.
      * Fake need to activate this way too.
      */
     const keyEvents = function ( e ) {
-      const ENTER = 13;
       const keyCode = e.keyCode || e.which;
 
       switch ( keyCode ) {
-        case ENTER:
+        case 13:
           e.preventDefault();
           goToURL();
       }
     }
 
     init.call( this );
-
     return this;
   }; // fauxLink()
 

@@ -39,7 +39,7 @@ Use the following mark-up to display a static URL if JavaScript is unavailable:
 If JavaScript is disabled, the following CSS selector will add a "-" between what would have been the link text, and the static URL.  
 
 ```css
-[data-link]:before {
+[data-link]::before {
   content: "-";
 }
 ```

@@ -2,11 +2,9 @@
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>
-      Faux ARIA "Links"
-    </title>
+    <title>ARIA "Links"</title>
     <meta name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      content="width=device-width, initial-scale=1">
     <script>
       // remove no-js and add 'js' to the HTML
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -24,7 +22,7 @@
 
   <body id="body">
 
-    <div id="page" class="content-area mxw-600">
+    <main id="page" class="content-area mxw-600">
       <h1>
         ARIA Link
       </h1>
@@ -81,7 +79,7 @@
         Duck Duck Go
 &lt;/span></code></pre>
 
-    </div>
+    </main>
 
     <script src="index.js"></script>
     <script>
@@ -89,7 +87,7 @@
       const els = document.querySelectorAll(flinks);
 
       // Generate all tab instances
-      for ( var i = 0; i < els.length; i++ ) {
+      for ( let i = 0; i < els.length; i++ ) {
         var dis = new fauxLink( els[i] );
       }
     </script>
