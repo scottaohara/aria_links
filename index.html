@@ -2,87 +2,93 @@
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>ARIA "Links"</title>
+    <title>ARIA Links demonstration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
-      // remove no-js and add 'js' to the HTML
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
     </script>
-
-    <style>
-      /*
-        general demo styles
-      */
-    *,*:after,*:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;font-family:arial}*{margin-bottom:0}body,html{background:#fafafa;color:#450c13;font-size:20px;line-height:1.3;margin:0;padding:0;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}.content-area{padding:20px;margin:auto}.mxw-600{max-width:600px}a{color:#921c2b}a:hover,a:focus{color:#c12f48}p{margin:12px 0;}button:focus{background:red!important;}h2,h3{font-size:22px;margin-top:40px;margin-bottom:8px;}pre,code{font-family:monospace;}pre{background:#222;color:#fff; padding:8px;font-size:.75em;overflow:scroll;}
-    </style>
+    <link rel="stylesheet" href="https://scottaohara.github.io/a11y_styled_form_controls/src/assets/css/--demo-only--.css">
+    <link rel="stylesheet" href="https://scottaohara.github.io/a11y_styled_form_controls/src/assets/css/--shared--.css">
     <link rel="stylesheet" href="assets/css/aria.links.css">
   </head>
 
   <body id="body">
-    <main id="page" class="content-area mxw-600">
-      <h1>
-        ARIA Link
-      </h1>
-      <p>Making fake ARIA links is generally not a good idea.  But, if you're going to do it anyway, then this here script is one way you could make them.</p>
+    <div id="page" class="demo-wrap">
+      <main>
+        <div class="demo">
+          <div class="demo-wrap__header">
+            <h1 style="margin-top: 0;">
+              <abbr title="Accessible Rich Internet Applications">ARIA</abbr> Links demonstration
+            </h1>
+            <p>Published: <span>November 26, 2016</span></p>
+            <p>Last updated: <span>December 11, 2021</span></p>
+            <div>
+              <a href="https://github.com/scottaohara/aria_buttons">See source on GitHub</a>
+            </div>
+          </div>
 
-      <h2>
-        Mark-up Option 1:
-      </h2>
-      <p>
-        This approach will fallback to static text if JavaScript is unavailable. For instance, if viewed in a browser's reader mode.
-      </p>
-      <span data-aria-link data-href="https://www.google.com">
-        Google
-      </span>
+          <p>Making fake ARIA links is generally not a good idea.  But, if you're going to do it anyway, then this here script is one way you could make them.</p>
 
-<pre><code>&lt;span data-aria-link
+          <h2>Pattern Demos</h2>
+          <p>
+            There are two markup pattern options for using this script, with a 
+            sub-option to open links in a new window.
+          </p>
+
+          <h3>Mark-up Option 1:</h3>
+          <p>
+            This approach will fallback to static text if JavaScript is unavailable. 
+            For instance, if viewed in a browser's reader mode.
+          </p>
+          <span data-aria-link data-href="https://www.google.com">
+            Google
+          </span>
+
+          <pre><code>&lt;span data-aria-link
   data-href="https://www.google.com">
   Google
 &lt;/span></code></pre>
 
-      <h2>
-        Mark-up Option 2:
-      </h2>
-      <p>
-        Use this mark-up to display a URL if JavaScript is unavailable.
-      </p>
-      <span data-aria-link>
-        Bing
-        <span data-link>
-          https://www.bing.com
-        </span>
-      </span>
+          <h3>Mark-up Option 2:</h3>
+          <p>
+            Use this mark-up to display a URL if JavaScript is unavailable.
+          </p>
+          <span data-aria-link>
+            Bing
+            <span data-link>
+              https://www.bing.com
+            </span>
+          </span>
 
-<pre><code>&lt;span data-aria-link>
+          <pre><code>&lt;span data-aria-link>
   Bing
   &lt;span data-link>
     https://www.bing.com
   &lt;/span>
 &lt;/span></code></pre>
 
-      <h3>
-        Open in a new window:
-      </h3>
-      <p>
-        The <b>data-blank</b> attribute will make the faux link open in a new window. It will add a <code>title</code> attribute with help text "opens in a new window".
-      </p>
-      <span data-aria-link data-href="https://duckduckgo.com" data-blank>
-        Duck Duck Go
-      </span>
+          <h3>Open in a new window:</h3>
+          <p>
+            The <b>data-blank</b> attribute will make the faux link open in a new window. It will add a <code>title</code> attribute with help text "opens in a new window".
+          </p>
+          <span data-aria-link data-href="https://duckduckgo.com" data-blank>
+            Duck Duck Go
+          </span>
 
-<pre><code>&lt;span data-aria-link
+          <pre><code>&lt;span data-aria-link
   data-href="https://duckduckgo.com"
   data-blank>
         Duck Duck Go
 &lt;/span></code></pre>
-    </main>
+        </div>
+      </main>
 
+    </div>
     <script src="index.js"></script>
     <script>
       const flinks = '[data-aria-link]';
       const els = document.querySelectorAll(flinks);
 
-      // Generate all tab instances
       for ( let i = 0; i < els.length; i++ ) {
         var dis = new fauxLink( els[i] );
       }
